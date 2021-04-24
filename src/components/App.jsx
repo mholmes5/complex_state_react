@@ -18,11 +18,12 @@ function App() {
   function updateFullName(event) {
     const newValue = event.target.value;
     const inputName = event.target.name;
-    console.log(inputName + " " + newValue);
+    //console.log(inputName + " " + newValue);
+
     if (inputName === "fName") {
-      setFullName({ firstName: newValue });
+      setFullName({ firstName: newValue, lastName: fullName.lastName });
     } else if (inputName === "lName") {
-      setFullName({ lastName: newValue });
+      setFullName({ firstName: fullName.firstName, lastName: newValue });
     }
   }
 
