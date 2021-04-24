@@ -51,13 +51,13 @@ function App() {
           onChange={updateFullName}
           name="fName"
           placeholder="First Name"
-          //value={fullName.firstName}
+          value={fullName.firstName}
         />
         <input
           onChange={updateFullName}
           name="lName"
           placeholder="Last Name"
-          //value={fullName.lastName}
+          value={fullName.lastName}
         />
         <button>Submit</button>
       </form>
