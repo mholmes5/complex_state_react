@@ -20,11 +20,25 @@ function App() {
     const inputName = event.target.name;
     //console.log(inputName + " " + newValue);
 
-    if (inputName === "fName") {
-      setFullName({ firstName: newValue, lastName: fullName.lastName });
-    } else if (inputName === "lName") {
-      setFullName({ firstName: fullName.firstName, lastName: newValue });
-    }
+    // if (inputName === "fName") {
+    //   setFullName({ firstName: newValue, lastName: fullName.lastName });
+    // } else if (inputName === "lName") {
+    //   setFullName({ firstName: fullName.firstName, lastName: newValue });
+    // }
+
+    setFullName((prevValue) => {
+      if (inputName === "fName") {
+        return {
+          firstName: newValue,
+          lastName: prevValue.lastName
+        };
+      } else if (inputName === "lName") {
+        return {
+          firstName: prevValue.firstName,
+          lastName: newValue
+        };
+      }
+    });
   }
 
   return (
