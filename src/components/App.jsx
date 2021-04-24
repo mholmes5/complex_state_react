@@ -1,34 +1,41 @@
 import React, { useState } from "react";
 
 function App() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [fullName, setFullName] = useState({
+    firstName: "",
+    lastName: ""
+  });
+  //const [lastName, setLastName] = useState("");
 
-  function handleFirstNameChange(event) {
-    setFirstName(event.target.value);
-  }
+  // function handleFirstNameChange(event) {
+  //   setFirstName(event.target.value);
+  // }
 
-  function handleLastNameChange(event) {
-    setLastName(event.target.value);
+  // function handleLastNameChange(event) {
+  //   setLastName(event.target.value);
+  // }
+
+  function updateFullName(event) {
+    setFullName();
   }
 
   return (
     <div className="container">
       <h1>
-        Hello {firstName} {lastName}
+        Hello {fullName.firstName} {fullName.lastName}
       </h1>
       <form>
         <input
-          onChange={handleFirstNameChange}
+          onChange={updateFullName}
           name="fName"
           placeholder="First Name"
-          value={firstName}
+          value={fullName.firstName}
         />
         <input
-          onChange={handleLastNameChange}
+          onChange={updateFullName}
           name="lName"
           placeholder="Last Name"
-          value={lastName}
+          value={fullName.lastName}
         />
         <button>Submit</button>
       </form>
